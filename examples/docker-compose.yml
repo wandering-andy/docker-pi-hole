@@ -14,7 +14,7 @@ services:
       - "80:80/tcp"
     environment:
       TZ: 'America/Denver'
-      WEBPASSWORD: '@tjflsp#pihole00!'
+      WEBPASSWORD: ''
     # Volumes store your data between container upgrades
     volumes:
       - './etc-pihole:/etc/pihole'
@@ -23,4 +23,5 @@ services:
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
-    # autoheal label
+    labels:
+      - "autoheal=true"
